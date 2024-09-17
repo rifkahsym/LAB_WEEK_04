@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.rifkahss.lab_week_04.R
+// import com.rifkahss.lab_week_04.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,16 +46,16 @@ class DetailFragment : Fragment() {
     fun setCoffeeData(id: Int){
         when(id){
             R.id.affogato -> {
-                coffeeTitle?.text = getString(R.string.affogato_title)
-                coffeeDesc?.text = getString(R.string.affogato_desc)
+                coffeeTitle?.text = getString(R.string.starbucks_title)
+                coffeeDesc?.text = getString(R.string.starbucks_desc)
             }
             R.id.americano -> {
-                coffeeTitle?.text = getString(R.string.americano_title)
-                coffeeDesc?.text = getString(R.string.americano_desc)
+                coffeeTitle?.text = getString(R.string.janjijiwa_title)
+                coffeeDesc?.text = getString(R.string.janjijiwa_desc)
             }
             R.id.latte -> {
-                coffeeTitle?.text = getString(R.string.latte_title)
-                coffeeDesc?.text = getString(R.string.latte_desc)
+                coffeeTitle?.text = getString(R.string.kopikenangan_title)
+                coffeeDesc?.text = getString(R.string.kopikenangan_desc)
             }
         }
     }

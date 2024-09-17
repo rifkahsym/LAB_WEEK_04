@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.example.lab_week_04.R.*
-import com.rifkahss.lab_week_04.R
+// import com.rifkahss.lab_week_04.R
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -31,7 +31,8 @@ class ListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(res.layout.fragment_list, container, false)
+        return inflater.inflate(R.layout.fragment_list, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

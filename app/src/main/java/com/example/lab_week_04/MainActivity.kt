@@ -23,6 +23,20 @@ class MainActivity : AppCompatActivity() {
                 R.id.ListFragment, R.id.FavoritesFragment, R.id.cafeFragment
             ), findViewById(R.id.drawer_layout)
         )
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_coffee -> {
+                    // Arahkan ke halaman atau fragment Coffee
+                    true
+                }
+                R.id.nav_cafe -> {
+                    // Arahkan ke halaman atau fragment Cafe
+                    true
+                }
+                else -> false
+            }
+        }
         setupActionBarWithNavController(navController, appBarConfiguration)
         findViewById<NavigationView>(R.id.nav_view)
             ?.setupWithNavController(navController)
