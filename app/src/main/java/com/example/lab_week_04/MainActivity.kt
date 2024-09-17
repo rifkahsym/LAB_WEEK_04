@@ -5,6 +5,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.google.android.material.navigation.NavigationView
+
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         //and adding them to the draw
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.ListFragment, R.id.FavoritesFragment
+                R.id.listFragment, R.id.favoritesFragment
             ), findViewById(R.id.drawer_layout)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
