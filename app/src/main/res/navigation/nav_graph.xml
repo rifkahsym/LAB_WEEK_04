@@ -15,9 +15,6 @@
             android:id="@+id/action_ListFragment_to_DetailFragment"
             app:destination="@id/coffeeDetail">
         </action>
-        <action
-            android:id="@+id/action_coffeeList_to_coffeeDetail"
-            app:destination="@id/coffeeDetail" />
     </fragment>
 
     <fragment
