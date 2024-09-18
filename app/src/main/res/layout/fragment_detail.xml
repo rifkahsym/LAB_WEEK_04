@@ -24,5 +24,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        tools:text="@string/starbucks_desc" />
+        tools:text="@string/affogato_desc" />
 </LinearLayout>

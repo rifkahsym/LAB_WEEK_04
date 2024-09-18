@@ -1,32 +1,33 @@
 package com.example.lab_week_04
 
-import android.os.Bundle
+import android.content.ContentProvider
+import android.content.Context
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import kotlinx.coroutines.withContext
 
-class CafeAdapter(
-    fragmentManager: FragmentManager,
-    lifecycle: Lifecycle
-) : FragmentStateAdapter(fragmentManager, lifecycle) {
+val TABS_FIXED = listOf(
+    R.string.starbucks_title,
+    R.string.janjijiwa_title,
+    R.string.kopikenangan_title,
+)
 
-    private val cafeDescriptions = listOf(
-        "Starbucks is known for its coffee and pastries.",
-        "Janji Jiwa offers a variety of coffee and tea drinks.",
-        "Kopi Kenangan provides a unique coffee experience."
-    )
+val TABS_CONTENT_FIXED = listOf(
+    R.string.starbucks_desc,
+    R.string.janjijiwa_desc,
+    R.string.kopikenangan_desc,
+)
+
+class CafeAdapter(private val context: Context, fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle) {
 
     override fun getItemCount(): Int {
-        return cafeDescriptions.size
+        return TABS_FIXED.size
     }
-
-    override fun createFragment(position: Int): Fragment {
-        // Membuat fragment baru dan meneruskan data deskripsi cafe
-        return CafeDetailFragment().apply {
-            arguments = Bundle().apply {
-                putString(CafeDetailFragment.ARG_DESCRIPTION, cafeDescriptions[position])
-            }
-        }
+    override fun createFragment(position: Int): Fragment
+    {
+        return CafeDetailFragment.newInstance(context.getString(TABS_CONTENT_FIXED[position]))
     }
 }

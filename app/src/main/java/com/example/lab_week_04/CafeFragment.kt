@@ -11,13 +11,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class CafeFragment : Fragment() {
 
-    // Gunakan listOf untuk menyimpan resource string ID dari strings.xml
-    private val TABS_FIXED = listOf(
-        R.string.starbucks_title,
-        R.string.janjijiwa_title,
-        R.string.kopikenangan_title
-    )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -26,6 +19,7 @@ class CafeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cafe, container, false)
     }
 
@@ -33,12 +27,10 @@ class CafeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val viewPager = view.findViewById<ViewPager2>(R.id.view_pager)
         val tabLayout = view.findViewById<TabLayout>(R.id.tab_layout)
-        val adapter = CafeAdapter(childFragmentManager, lifecycle)
+        val adapter = CafeAdapter(requireContext(), childFragmentManager, lifecycle)
         viewPager.adapter = adapter
-
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            // Gunakan getString untuk mengambil string dari resource ID
-            tab.text = getString(TABS_FIXED[position])
+            tab.text = resources.getString(TABS_FIXED[position])
         }.attach()
     }
 }

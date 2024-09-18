@@ -17,7 +17,6 @@ private const val ARG_PARAM2 = "param2"
  * Use the [DetailFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-
 class DetailFragment : Fragment() {
     private val coffeeTitle: TextView?
         get() = view?.findViewById(R.id.coffee_title)
@@ -45,16 +44,16 @@ class DetailFragment : Fragment() {
     fun setCoffeeData(id: Int){
         when(id){
             R.id.affogato -> {
-                coffeeTitle?.text = getString(R.string.starbucks_title)
-                coffeeDesc?.text = getString(R.string.starbucks_desc)
+                coffeeTitle?.text = getString(R.string.affogato_title)
+                coffeeDesc?.text = getString(R.string.affogato_desc)
             }
             R.id.americano -> {
-                coffeeTitle?.text = getString(R.string.janjijiwa_title)
-                coffeeDesc?.text = getString(R.string.janjijiwa_desc)
+                coffeeTitle?.text = getString(R.string.americano_title)
+                coffeeDesc?.text = getString(R.string.americano_desc)
             }
             R.id.latte -> {
-                coffeeTitle?.text = getString(R.string.kopikenangan_title)
-                coffeeDesc?.text = getString(R.string.kopikenangan_desc)
+                coffeeTitle?.text = getString(R.string.latte_title)
+                coffeeDesc?.text = getString(R.string.latte_desc)
             }
         }
     }
