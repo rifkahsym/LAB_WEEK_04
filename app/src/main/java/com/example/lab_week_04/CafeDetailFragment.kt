@@ -10,6 +10,10 @@ import android.widget.TextView
 class CafeDetailFragment : Fragment() {
 
     companion object {
+        fun newInstance(string: String) {
+
+        }
+
         const val ARG_DESCRIPTION = "ARG_DESCRIPTION"
     }
 
@@ -27,7 +31,7 @@ class CafeDetailFragment : Fragment() {
         val description = arguments?.getString(ARG_DESCRIPTION) ?: ""
 
         // Tampilkan deskripsi di TextView
-        val descriptionTextView = view.findViewById<TextView>(R.id.cafe_description)
+        val descriptionTextView = view.findViewById<TextView>(R.id.cafeFragment)
         descriptionTextView.text = description
     }
 }
